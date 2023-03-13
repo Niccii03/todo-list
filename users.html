@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Todo App</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/08958affb8.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="sign-out">
+        <button class="sign-out-button hover_button" onclick="logout()">Sign-out</button>
+    </div>
+    <div class="container">
+        <form id="form" class="todo-form">
+            <div>
+                <label for="todos"></label>
+                <input type="text" id="todos" required>
+            </div>
+        </form>
+        <div id="todo-container">
+
+        </div>
+        <div class="buttons">
+            <button id="all" onclick="filterHandler('all')" class="button button1 hover_button">All</button>
+            <button id="open" onclick="filterHandler('open')" class="button button2 hover_button">Open</button>
+            <button id="finished" onclick="filterHandler('completed')"
+                class="button button3 hover_button">Finished</button>
+        </div>
+
+
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/9.12.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.12.1/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.12.1/firebase-auth-compat.js"></script>
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyBx43glCwYWgyovk91_Amf6XVVqMKEiv1Y",
+            authDomain: "todo-list-38e02.firebaseapp.com",
+            projectId: "todo-list-38e02",
+            storageBucket: "todo-list-38e02.appspot.com",
+            messagingSenderId: "20051255244",
+            appId: "1:20051255244:web:68fb20904c8fdef7f00769",
+            measurementId: "G-WFYFCCB4DY"
+        };
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+    </script>
+
+    <script src="js/users.js"></script>
+</body>
+
+</html>
